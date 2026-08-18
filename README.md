@@ -124,6 +124,9 @@ For a manual Render service use:
 No API key or secret is needed for USGS. Optional settings are `USGS_QUERY_DAYS`,
 `USGS_MIN_MAGNITUDE`, `USGS_TIMEOUT_SECONDS`, and `BOKEH_ALLOW_WS_ORIGIN`.
 
+The Blueprint explicitly selects Render's `free` web-service instance. Free instances
+may sleep when idle and take roughly a minute to wake for the next visitor.
+
 ## Project layout
 
 ```text

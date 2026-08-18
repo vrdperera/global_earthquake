@@ -2,6 +2,7 @@ services:
   - type: web
     name: global-earthquake-explorer
     runtime: python
+    plan: free
     buildCommand: pip install uv && uv sync --frozen
     startCommand: bash scripts/start.sh
     healthCheckPath: /app
