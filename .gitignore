@@ -1,0 +1,18 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.DS_Store
+data/cache/*.json
+!data/cache/.gitkeep
+!data/cache/usgs_seed.json

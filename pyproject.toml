@@ -1,0 +1,25 @@
+[project]
+name = "global-earthquake-explorer"
+version = "0.1.0"
+description = "Interactive Bokeh Server dashboard for exploring global USGS earthquakes"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "bokeh>=3.9.2",
+    "geopandas>=1.1.4",
+    "httpx>=0.28.1",
+    "numpy>=2.5.2",
+    "pandas>=3.0.5",
+    "pyproj>=3.7.2",
+    "shapely>=2.1.2",
+    "xyzservices>=2026.3.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

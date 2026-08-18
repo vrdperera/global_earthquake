@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: global-earthquake-explorer
+    runtime: python
+    buildCommand: pip install uv && uv sync --frozen
+    startCommand: bash scripts/start.sh
+    healthCheckPath: /app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.12
+      - key: BOKEH_ALLOW_WS_ORIGIN
+        sync: false
