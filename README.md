@@ -127,6 +127,22 @@ No API key or secret is needed for USGS. Optional settings are `USGS_QUERY_DAYS`
 The Blueprint explicitly selects Render's `free` web-service instance. Free instances
 may sleep when idle and take roughly a minute to wake for the next visitor.
 
+## Railway deployment
+
+Railway deployment is configured in `railway.json`. Railpack detects `pyproject.toml`
+and `uv.lock`, installs the locked dependencies with `uv`, and runs
+`bash scripts/start.sh`.
+
+1. Push the repository to GitHub.
+2. In Railway, choose **New Project → Deploy from GitHub Repo**.
+3. Select this repository and wait for the first deployment.
+4. Open the service's **Settings → Networking** and click **Generate Domain**.
+5. Redeploy the service once so Bokeh receives Railway's `RAILWAY_PUBLIC_DOMAIN`.
+
+The start script reads Railway's provided `PORT` and `RAILWAY_PUBLIC_DOMAIN`
+automatically. The dashboard is available at `https://<railway-domain>/app`; no custom
+Bokeh WebSocket variable is required.
+
 ## Project layout
 
 ```text
